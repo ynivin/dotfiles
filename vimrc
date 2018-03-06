@@ -171,3 +171,6 @@ imap ii <Esc>
 
 " Close if NERDTree is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" Pressing \\ shows the current directory
+cmap \\ <C-R>=expand("%:p:h")."/"<cr>
