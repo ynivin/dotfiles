@@ -61,7 +61,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-scripts/verilog_systemverilog_fix'
+Plugin 'ynivin/verilog_systemverilog_fix'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
@@ -81,6 +81,8 @@ Plugin 'godlygeek/tabular'
 call vundle#end()
 
 filetype plugin indent on
+
+let b:verilog_indent_modules = 1
 
 " Trim whitespace
 autocmd BufWritePre * :%s/\s\+$//e
