@@ -16,7 +16,7 @@ set number
 set numberwidth=5
 set autoindent
 set copyindent
-set smartindent
+" set smartindent
 set ruler
 set incsearch
 set hlsearch
@@ -61,7 +61,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'ynivin/verilog_systemverilog_fix'
+Plugin 'vhda/verilog_systemverilog.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
