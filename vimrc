@@ -76,6 +76,8 @@ Plugin 'bronson/vim-visual-star-search'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/ctrlp.vim'
 
 
 call vundle#end()
@@ -136,7 +138,7 @@ nnoremap <C-W><C-L> :exe "vertical resize +5"<CR>
 nnoremap <C-W><C-H> :exe "vertical resize -5"<CR>
 
 " Close buffer without closing window
-nnoremap <C-X> :Bdelete<CR>
+nnoremap <C-X> :bd<CR>
 
 " Go to last buffer
 nnoremap <tab> :b#<CR>
