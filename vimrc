@@ -178,3 +178,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Pressing \\ shows the current directory
 cmap \\ <C-R>=expand("%:p:h")."/"<cr>
+
+" Look for tags files towards the tree
+set tags=./tags;/
