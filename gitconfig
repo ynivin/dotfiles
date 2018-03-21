@@ -1,6 +1,5 @@
 [user]
-	name = Yossi Nivin
-	email = ynivin@gmail.com
+	useConfigOnly = true
 [alias]
 	co = checkout
 	ci = commit
