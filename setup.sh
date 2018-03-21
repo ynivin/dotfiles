@@ -10,9 +10,13 @@ done
 
 if [ "${force}" ] ; then
     echo "Force"
-    if [ -e ~/bashrc ] ; then
+    if [ -e ~/.bashrc ] ; then
         cp -a ~/.bashrc ~/.bashrc.bak
         rm -f ~/.bashrc
+    fi
+    if [ -e ~/.gitconfig ] ; then
+        cp -a ~/.gitconfig ~/.gitconfig.bak
+        rm -f ~/.gitconfig
     fi
     if [ -e ~/.vimrc ] ; then
         cp -a ~/.vimrc ~/.vimrc.bak
@@ -24,24 +28,23 @@ if [ "${force}" ] ; then
     fi
     if [ -d ~/.vim ] ; then
         cp -R ~/.vim ~/.vim.bak
-        rm -rf ~/.myalias
+        rm -rf ~/.vim
     fi
-elif [ -e ~/.bashrc ] || [ -e ~/.vimrc ] || [ -e ~/.myalias ] || [ -d ~/.vim ] ; then
+elif [ -e ~/.bashrc ] || [ -e ~/.gitgonfig ] || [ -e ~/.vimrc ] || [ -e ~/.myalias ] || [ -d ~/.vim ] ; then
     echo "Files already exists. You can force with -f flag"
     exit 1
 fi
 
-ln -s ~/dotfiles/bashrc     ~/.bashrc
-ln -s ~/dotfiles/vimrc      ~/.vimrc
-ln -s ~/dotfiles/myalias    ~/.myalias
+ln -s ~/dotfiles/bash/bashrc    ~/.bashrc
+ln -s ~/dotfiles/git/gitconfig  ~/.gitconfig
+ln -s ~/dotfiles/vim/vimrc      ~/.vimrc
+ln -s ~/dotfiles/bash/myalias   ~/.myalias
 
 
 # TODO
 # 1. Execute Vundle install
-# 2. Update dotfile local git settings according to variables
-# 3. Add update procedure
-# 4. Make the code more generic fith file list
-# 5. Write 'help' text
+# 2. Add update procedure
+# 3. Make the code more generic fith file list
+# 4. Write 'help' text
 
-name='Yossi Nivin'
-email='ynivin@gmail.com'
+

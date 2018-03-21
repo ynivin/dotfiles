@@ -1,0 +1,5 @@
+source ~/.myalias
+
+if [ -e ~/.workalias ] ; then
+    source ~/.workalias
+fi
