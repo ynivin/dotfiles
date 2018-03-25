@@ -10,27 +10,32 @@ done
 
 if [ "${force}" ] ; then
     echo "Force"
-    if [ -e ~/.bashrc ] ; then
+    if test -e ~/.bashrc ; then
+        rm -f ~/.bashrc.bak
         cp -a ~/.bashrc ~/.bashrc.bak
         rm -f ~/.bashrc
     fi
-    if [ -e ~/.gitconfig ] ; then
+    if test -e ~/.gitconfig ; then
+        rm -f ~/.gitconfig.bak
         cp -a ~/.gitconfig ~/.gitconfig.bak
         rm -f ~/.gitconfig
     fi
-    if [ -e ~/.vimrc ] ; then
+    if test -e ~/.vimrc ; then
+        rm -f ~/.vimrc.bak
         cp -a ~/.vimrc ~/.vimrc.bak
         rm -f ~/.vimrc
     fi
-    if [ -e ~/.myalias ] ; then
+    if test -e ~/.myalias ; then
+        rm -f ~/.myalias.bak
         cp -a ~/.myalias ~/.myalias.bak
         rm -f ~/.myalias
     fi
-    if [ -d ~/.vim ] ; then
+    if test -d ~/.vim ; then
+        rm -rf ~/.vim.bak
         cp -R ~/.vim ~/.vim.bak
         rm -rf ~/.vim
-    fi
-elif [ -e ~/.bashrc ] || [ -e ~/.gitgonfig ] || [ -e ~/.vimrc ] || [ -e ~/.myalias ] || [ -d ~/.vim ] ; then
+   fi
+elif test -e ~/.bashrc || test -e ~/.gitgonfig || test -e ~/.vimrc || test -e ~/.myalias || test -d ~/.vim ; then
     echo "Files already exists. You can force with -f flag"
     exit 1
 fi
@@ -39,12 +44,14 @@ ln -s ~/dotfiles/bash/bashrc    ~/.bashrc
 ln -s ~/dotfiles/git/gitconfig  ~/.gitconfig
 ln -s ~/dotfiles/vim/vimrc      ~/.vimrc
 ln -s ~/dotfiles/bash/myalias   ~/.myalias
+ln -s ~/dotfiles/vim/dotvim     ~/.vim
 
 
 # TODO
 # 1. Execute Vundle install
 # 2. Add update procedure
-# 3. Make the code more generic fith file list
+# 3. Make the code more generic fith file/alias list
 # 4. Write 'help' text
+# 5. Add progress messages
 
 
